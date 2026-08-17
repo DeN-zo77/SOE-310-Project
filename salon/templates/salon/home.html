@@ -1,0 +1,23 @@
+{% extends 'salon/base.html' %}
+{% block title %}Home | Sharp Fade Barbershop{% endblock %}
+{% block content %}
+    <div class="hero">
+        <h1>Sharp Fade Barbershop</h1>
+        <p>Clean cuts, sharp fades, hot towel shaves - book your seat in seconds.</p>
+        <br>
+        <a href="{% url 'book_appointment' %}" class="btn btn-gold">Book an Appointment</a>
+    </div>
+    <div class="container">
+        <h2>Featured Services</h2>
+        {% for service in featured_services %}
+            <div class="card">
+                <strong>{{ service.name }}</strong> - <span class="price-tag">NGN {{ service.price }}</span><br>
+                {% if service.description %}{{ service.description }}<br>{% endif %}
+                <small>{{ service.duration_minutes }} minutes</small>
+            </div>
+        {% empty %}
+            <p>Services coming soon - check back later.</p>
+        {% endfor %}
+        <a href="{% url 'services' %}" class="btn">View All Services</a>
+    </div>
+{% endblock %}

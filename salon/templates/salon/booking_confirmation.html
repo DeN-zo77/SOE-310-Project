@@ -1,0 +1,16 @@
+{% extends 'salon/base.html' %}
+{% block title %}Booking Confirmed | Sharp Fade Barbershop{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2>Booking Confirmed </h2>
+        <p>Thanks, {{ appointment.client_name }}! Your appointment is booked.</p>
+        <div class="card">
+            <strong>Service:</strong> {{ appointment.service.name }}<br>
+            {% if appointment.barber %}<strong>Barber:</strong> {{ appointment.barber.name }}<br>{% endif %}
+            <strong>Date:</strong> {{ appointment.date }}<br>
+            <strong>Time:</strong> {{ appointment.time }}<br>
+            {% if appointment.notes %}<strong>Notes:</strong> {{ appointment.notes }}{% endif %}
+        </div>
+        <a href="{% url 'home' %}" class="btn">Back to Home</a>
+    </div>
+{% endblock %}

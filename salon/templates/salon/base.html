@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Sharp Fade Barbershop{% endblock %}</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; color: #222; }
+        .navbar { background: #1a1a1a; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .navbar .brand { font-size: 20px; font-weight: bold; color: #D4AF37; }
+        .navbar a { color: white; text-decoration: none; margin-left: 18px; font-size: 14px; }
+        .navbar a:hover { color: #D4AF37; }
+        .hero { background: #1a1a1a; color: white; padding: 60px 30px; text-align: center; }
+        .hero h1 { color: #D4AF37; font-size: 36px; margin-bottom: 10px; }
+        .hero p { font-size: 16px; color: #ddd; }
+        .container { max-width: 850px; margin: 30px auto; background: white; padding: 25px 30px; border-radius: 8px; }
+        .card { border: 1px solid #ddd; border-radius: 6px; padding: 15px; margin-bottom: 12px; }
+        .btn { background: #1a1a1a; color: white; padding: 10px 18px; border: none; border-radius: 4px; text-decoration: none; display: inline-block; cursor: pointer; font-size: 14px; }
+        .btn:hover { background: #D4AF37; color: #1a1a1a; }
+        .btn-delete { background: #c0392b; }
+        .btn-gold { background: #D4AF37; color: #1a1a1a; font-weight: bold; }
+        input, textarea, select { width: 100%; padding: 8px; margin: 6px 0 12px 0; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        label { font-weight: bold; font-size: 14px; }
+        .messages { list-style: none; padding: 0; }
+        .messages li { background: #eafbea; border: 1px solid #a8dfb0; padding: 10px; border-radius: 4px; margin-bottom: 12px; color: #256029; }
+        footer { text-align: center; padding: 20px; color: #888; font-size: 13px; }
+        .price-tag { color: #D4AF37; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <span class="brand">Sharp Fade Barbershop</span>
+        <div>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'book_appointment' %}">Book Now</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'appointment_list' %}">My Schedule</a>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+    <footer>&copy; 2026 Sharp Fade Barbershop. Built with Django for SEN 310.</footer>
+</body>
+</html>

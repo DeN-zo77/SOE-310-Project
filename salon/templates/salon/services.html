@@ -1,0 +1,17 @@
+{% extends 'salon/base.html' %}
+{% block title %}Services | Sharp Fade Barbershop{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2>Our Services</h2>
+        {% for service in services %}
+            <div class="card">
+                <strong>{{ service.name }}</strong> - <span class="price-tag">NGN {{ service.price }}</span><br>
+                {% if service.description %}{{ service.description }}<br>{% endif %}
+                <small>{{ service.duration_minutes }} minutes</small>
+            </div>
+        {% empty %}
+            <p>No services listed yet.</p>
+        {% endfor %}
+        <a href="{% url 'book_appointment' %}" class="btn btn-gold">Book Now</a>
+    </div>
+{% endblock %}

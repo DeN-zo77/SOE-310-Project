@@ -1,0 +1,19 @@
+{% extends 'salon/base.html' %}
+{% block title %}My Schedule | Sharp Fade Barbershop{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2>My Schedule</h2>
+        <a href="{% url 'book_appointment' %}" class="btn btn-gold">+ Add Appointment</a>
+        <br><br>
+        {% for appt in appointments %}
+            <div class="card">
+                <strong>{{ appt.client_name }}</strong> - {{ appt.service.name }}<br>
+                {{ appt.date }} at {{ appt.time }}{% if appt.barber %} with {{ appt.barber.name }}{% endif %}<br>
+                {% if appt.notes %}<em>{{ appt.notes }}</em><br>{% endif %}
+                <a href="{% url 'appointment_delete' appt.pk %}" class="btn btn-delete">Delete</a>
+            </div>
+        {% empty %}
+            <p>No appointments scheduled yet.</p>
+        {% endfor %}
+    </div>
+{% endblock %}

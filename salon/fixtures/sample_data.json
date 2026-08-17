@@ -1,0 +1,7 @@
+[
+  {"model": "salon.service", "pk": 1, "fields": {"name": "Classic Haircut", "description": "Scissor cut and tidy-up", "price": "2500.00", "duration_minutes": 30}},
+  {"model": "salon.service", "pk": 2, "fields": {"name": "Skin Fade", "description": "Sharp fade with line-up", "price": "3500.00", "duration_minutes": 45}},
+  {"model": "salon.service", "pk": 3, "fields": {"name": "Beard Trim", "description": "Shape and line the beard", "price": "1500.00", "duration_minutes": 20}},
+  {"model": "salon.barber", "pk": 1, "fields": {"name": "Chidi Okafor", "specialty": "Fades & Line-ups", "bio": "8 years of experience, known for crisp skin fades."}},
+  {"model": "salon.barber", "pk": 2, "fields": {"name": "Emeka Nwosu", "specialty": "Classic Cuts", "bio": "Specialist in classic and vintage barbering styles."}}
+]

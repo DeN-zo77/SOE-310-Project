@@ -1,0 +1,20 @@
+{% extends 'salon/base.html' %}
+{% block title %}About | Sharp Fade Barbershop{% endblock %}
+{% block content %}
+    <div class="container">
+        <h2>About Us</h2>
+        <p>Sharp Fade Barbershop has been serving the community with precision cuts and
+        friendly service. We believe a good haircut is part craft, part conversation -
+        our barbers take the time to get every fade, line-up, and shave exactly right.</p>
+
+        <h2>Our Barbers</h2>
+        {% for barber in barbers %}
+            <div class="card">
+                <strong>{{ barber.name }}</strong>{% if barber.specialty %} - {{ barber.specialty }}{% endif %}<br>
+                {% if barber.bio %}<p>{{ barber.bio }}</p>{% endif %}
+            </div>
+        {% empty %}
+            <p>Barber profiles coming soon.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
